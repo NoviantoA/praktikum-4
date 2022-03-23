@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Praktikum No 2</title>
+    <style>
+      .judul {
+        width: 60%;
+        margin: auto;
+      }
+      p {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+      }
+      .isi {
+        display: flex;
+        margin-left: 390px;
+      }
+      .kotak {
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-size: 18px;
+        border: 1px solid #383838;
+        border-radius: 50%;
+        margin: 10px;
+        margin-left: 0;
+        line-height: 70px;
+        text-transform: uppercase;
+        color: #ffffff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="judul">
+        <p>Buatlah menggunakan event double klik, ketika pada salah satu kotak di dobel klik maka warna pada kotak bisa berubah</p>
+      </div>
+      <div class="isi">
+        <a class="kotak" href="#" title="black">1</a>
+        <a class="kotak" href="#" title="gray">2</a>
+        <a class="kotak" href="#" title="blue">3</a>
+        <a class="kotak" href="#" title="green">4</a>
+        <a class="kotak" href="#" title="yellow">5</a>
+        <a class="kotak" href="#" title="orange">6</a>
+      </div>
+    </div>
+    <!-- =============== JQuery & JavaScript =========== -->
+    <script src="js/jquery-3.6.0.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.kotak').each(function () {
+          var warna = $(this).attr('title');
+          $(this).css({ background: warna });
+          $(this).click(function () {
+            $('.kotak').css({ background: warna });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
